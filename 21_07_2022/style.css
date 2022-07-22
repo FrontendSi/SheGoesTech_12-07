@@ -1,0 +1,34 @@
+.navbar {
+    background-color:cadetblue;
+    width: 100%;
+}
+
+.navelement a{
+    color:aquamarine;
+    text-decoration: none;
+}
+
+.navelement {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+
+@media(min-width: 500px) {
+    .navbar {
+        display: flex;
+    }
+}
+
+
+@media(max-width: 500px) {
+    .navelement {
+        text-align:center ;
+    }
+}
+
+.picture {
+    border: 3px solid black;
+    padding: 10px;
+    width: fit-content;
+}
