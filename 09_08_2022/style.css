@@ -1,0 +1,10 @@
+.items {
+    display:flex;
+    align-items: center;
+}
+
+.operators button {
+    margin: 0.5em;
+    display:flex;
+    width: 2em;
+}

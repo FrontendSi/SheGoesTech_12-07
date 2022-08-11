@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="scripts/script.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1>Hello World</h1>
+    <a href = "https://www.facebook.com/">Link to FB</a> -->
+    <div class="container">
+      <div id="inputsection">
+        <label>Name, Last Name</label>
+        <input id="name" />
+        <input id="lastname" />
+        <button onClick="welcomeUser()">Submit</button>
+      </div>
+      <h1 id="welcome"></h1>
+
+       <!-- ----1 OPTION----- -->
+
+      <!-- <button class = "btn" onClick="hideInputSection()">Hide</button>
+      <button class = "btn" onClick="displayInputSection()">Display</button>
+      <button class = "btn" onClick="changeColor()">Change color</button> -->
+    
+        <!-- ----2 OPTION----- -->
+
+        <button class = "btn" onClick="hideDisplayInputSection(true)">Hide</button>
+      <button class = "btn" onClick="hideDisplayInputSection(false)">Display</button>
+      <button class = "btn" onClick="changeColor()">Change color</button>
+      
+      <h2 id = "count">TIMER</h2>
+      <input hidden id = "stopCounter" value="true">
+      <button class = "btn" onClick="timer()">Set timer</button>
+      <button class = "btn" onClick="stopCounter()">Stop counter</button>
+      <input type = "number" id = "factorialN" >
+      <h1 id = "factorialValue"></h1>
+      <button onClick = "setFactorial()">Get factorial</button>
+    </div>
+  </body>
+</html>
