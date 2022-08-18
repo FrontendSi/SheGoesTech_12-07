@@ -87,10 +87,10 @@ function addNewBarndFilter(brand) {
     let brandFilter = document.getElementById("brandFilter");
     let allSelectOption = brandFilter.getElementsByTagName("option");
 
-    let element = $("#colorFilter option")[0];
+    let element = $("#brandFilter option")[0];
 
     while ($(element).val() !== undefined) {
-        if ($(element).val() === color)
+        if ($(element).val() === brand)
             return;
         element = $(element).next(); //another type of loop
     }
@@ -100,7 +100,7 @@ function addNewBarndFilter(brand) {
     //     if (allSelectOption[i].innerText === brand)
     //         return;
 
-    
+
     let newSelectionOption = document.createElement("option");
     newSelectionOption.innerText = brand;
     brandFilter.appendChild(newSelectionOption)
