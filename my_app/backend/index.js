@@ -43,11 +43,26 @@ app.post("/add-customer", (req, res) => {
         vip: req.body.vip == "Yes" ? 1 : 0
     };
 
+// ---- This can causes some issues if user inser ', so need to prepare templae for SQL statment 
 
-    const sqlQuery = "INSERT INTO customers (firstname, lastname, email, phone, vip) VALUES ('" +
-        newCustomer.firstname + "','" + newCustomer.lastname + "','" +
-        newCustomer.phone + "', '" + newCustomer.email + "', " + newCustomer.vip + ")";
-    connection.query(sqlQuery, (error, results) => {
+    // const sqlQuery = "INSERT INTO customers (firstname, lastname, email, phone, vip) VALUES ('" +
+    //     newCustomer.firstname + "','" + newCustomer.lastname + "','" +
+    //     newCustomer.phone + "', '" + newCustomer.email + "', " + newCustomer.vip + ")";
+    // connection.query(sqlQuery, (error, results) => {
+    //     if (error)
+    //         throw error;
+    //     res.send(JSON.stringify({
+    //         "status": 200,
+    //         "error": null,
+    //         "response": "Customer ID: " + results.insertId + "created!"
+    //     }))
+    // })
+
+    // SQL TEMPLATE STARTS------
+
+    const sqlQuery = "INSERT INTO customers (firstname, lastname, email, phone, vip) VALUES (?, ?, ?, ?, ?)";
+    connection.query(sqlQuery, [newCustomer.firstname, newCustomer.lastname, newCustomer.phone, newCustomer.email, newCustomer.vip
+    ], (error, results) => {
         if (error)
             throw error;
         res.send(JSON.stringify({
@@ -56,6 +71,8 @@ app.post("/add-customer", (req, res) => {
             "response": "Customer ID: " + results.insertId + "created!"
         }))
     })
+
+    // SQL TEMPLATE ENDS------
 
     // console.log(JSON.stringify(newCustomer));
     // fs.readFile('AllCustomers.json', "utf8", (err, data) => {
