@@ -51,13 +51,13 @@
                   <div class="form-group row">
                     <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                     <div class="col-sm-10">
-                      <input type="text" name="phone" class="form-control" id="phone" placeholder="+371xxxxxxxx" pattern="\+37[0-2]2[0-9]{7}">
+                      <input type="text" name="phone" class="form-control" id="phone" placeholder="+371xxxxxxxx" pattern="+37[0-2]2[0-9]{7}">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="vip" class="col-sm-2 col-form-label">VIP</label>
                     <div class="col-sm-10">
-                      <input type="text" name="vip" class="form-control" id="vip" placeholder="Yes/No" pattern="/^(Yes|No)">
+                      <input type="text" name="vip" class="form-control" id="vip" placeholder="Yes/No" pattern="^(Yes|No)">
                     </div>
                   </div>
 
@@ -68,6 +68,20 @@
             <input name="vip"> -->
             <button class="btn btn-primary">Save</button>
         </form>
+
+        <form method="POST" action = "http://localhost:5000/delete-customer">
+          <div class="form-group row">
+            <label for="id" class="col-sm-2 col-form-label">ID</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" name="deleteId" id="deleteId"> 
+                 <!-- if OPTION 1 we need to write oninput="idValid()"
+                 If OPTION 2 without event listener we ned to write oninput="idValid(event)"
+                 if Option 3 with event listener we do not need nothing on input tag -->
+              </div>
+          </div>
+          <button class="btn btn-danger">Delete</button>
+        </form>
+
     </div>
 </body>
 </html>
