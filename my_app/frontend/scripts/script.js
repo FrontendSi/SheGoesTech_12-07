@@ -2,7 +2,7 @@ const customerIds =[];
 
 
 fetchSetCustomer = () => {
-    $.getJSON("http://localhost:5000/get-allCustomer",
+    $.getJSON("http://localhost:5000/get-allCustomers",
     function(data){ 
         
         const customers = data.response.customers;
@@ -99,5 +99,3 @@ idValid = (event) => {
         deleteIdElement.setCustomValidity("ID does not exist");
 }
 
-
-    
